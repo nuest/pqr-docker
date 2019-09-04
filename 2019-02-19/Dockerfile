@@ -44,4 +44,4 @@ LABEL org.label-schema.license="https://raw.githubusercontent.com/radfordneal/pq
     org.label-schema.schema-version="rc1" \
     maintainer="Daniel Nüst <daniel.nuest@uni-muenster.de>"
     
-CMD ["R"]
+CMD ["R", "--no-save"]
