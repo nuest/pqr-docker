@@ -8,7 +8,7 @@ WORKDIR /tmp
 RUN sed -i "s/deb.debian.org/cdn-fastly.deb.debian.org/" /etc/apt/sources.list \
     && sed -i "s/security.debian.org/cdn-fastly.debian.org\/debian-security/" /etc/apt/sources.list \
     && apt-get update \
-	&& apt-get install -y --no-install-recommends \
+	&& apt-get install -y --allow-unauthenticated --no-install-recommends \
         curl \
         build-essential \
         gfortran \
@@ -44,12 +44,12 @@ RUN tar xf pqR-$PQR_VERSION.tar.gz \
 #        libreadline-dev \
 #        make
 #COPY --from=builder /usr/local/bin/R /usr/local/bin/R
-#COPY --from=builder /usr/local/lib64/R /usr/local/lib64/R
+#COPY --from=builder /usr/local/lib/R /usr/local/lib/R
 #WORKDIR /
 
 # Set CRAN to pqR repository
 RUN echo "options(repos = c(CRAN = 'ftp://price.utstat.utoronto.ca/$PQR_VERSION')); \
-    cat('\nUsed CRAN mirror: ', getOption('repos'), '\n')" >> /usr/local/lib64/R/etc/Rprofile.site
+    cat('\nUsed CRAN mirror: ', getOption('repos'), '\n')" >> /usr/local/lib/R/etc/Rprofile.site
 
 # Add image metadata
 ARG VCS_URL
