@@ -16,6 +16,11 @@ docker build --tag pqr .
 docker run --it --rm pqr
 ```
 
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md) (file `CODE_OF_CONDUCT.md`).
+By participating in this project you agree to abide by its terms.
+
 ## License
 
 pqR is available under the GPLv2 (or higher) license and Copyright (C) 2013-2017 Radford M. Neal.
