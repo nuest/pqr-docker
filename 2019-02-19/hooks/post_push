@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+echo "Add version tag"
+docker tag $IMAGE_NAME $DOCKER_REPO:2019-02-19
+docker push $DOCKER_REPO:2019-02-19
