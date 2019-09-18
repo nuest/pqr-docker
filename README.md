@@ -25,7 +25,18 @@ docker build --tag pqr .
 docker run --it --rm pqr
 ```
 
-## Multi-stage builds
+## Image for development version
+
+You can build and run a Docker image for a specific commit of the source code with the following command:
+
+```bash
+REF=<my commit or branch>; docker build --tag pqr:$(echo $REF) --build-arg REF=$REF --file dev/Dockerfile .
+docker run --rm -it pqr:$(echo $REF)
+# use R, quit container
+unset REF
+```
+
+## Multi-stage builds [WIP]
 
 It could be useful to apply a multi-stage build to reduce images size.
 Some snippets to get that started:
